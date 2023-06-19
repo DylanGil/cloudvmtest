@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import "./App.css"; // Import a separate CSS file for custom styles
+import Users from "./public/users.json";
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    setIsAuth(true);
+    console.log("Users:", Users);
+    const user = Users.find(
+      (user) =>
+        user.username === values.username && user.password === values.password
+    );
+    console.log("user :>> ", user);
+    if (!user) {
+      message.error("Invalid username or password");
+    } else setIsAuth(true);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -31,6 +40,7 @@ const App = () => {
       <Form.Item
         label="Username"
         name="username"
+        initialValue={"userManyVM"}
         rules={[
           {
             required: true,
@@ -44,6 +54,7 @@ const App = () => {
       <Form.Item
         label="Password"
         name="password"
+        initialValue={"password"}
         rules={[
           {
             required: true,

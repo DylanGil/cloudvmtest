@@ -1,0 +1,14 @@
+[
+  {
+    "username": "userNoCredit",
+    "password": "password"
+  },
+  {
+    "username": "userOneVM",
+    "password": "password"
+  },
+  {
+    "username": "userManyVM",
+    "password": "password"
+  }
+]
