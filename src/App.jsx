@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { Button, Form, Input, message } from "antd";
-import "./App.css"; // Import a separate CSS file for custom styles
+import "./App.css";
 import Users from "./public/users.json";
+import VM from "./components/VM";
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   const onFinish = (values) => {
-    console.log("Success:", values);
-    console.log("Users:", Users);
     const user = Users.find(
       (user) =>
         user.username === values.username && user.password === values.password
     );
-    console.log("user :>> ", user);
     if (!user) {
       message.error("Invalid username or password");
     } else setIsAuth(true);
@@ -24,7 +22,7 @@ const App = () => {
   };
 
   if (isAuth) {
-    return <div>Auth</div>;
+    return <VM />;
   }
 
   return (
