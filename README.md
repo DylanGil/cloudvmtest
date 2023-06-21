@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Cloud VM Dylan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Requis
 
-## Available Scripts
+Node.js
 
-In the project directory, you can run:
+# Installation
 
-### `npm start`
+Au démarage de l'application, écrire `npm install` dans la console pour installer les dépendances.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pour démarrer l'application, écrire `npm start` dans la console.
+Ouvrir [http://localhost:3000](http://localhost:3000) pour voir l'application dans le navigateur.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Env
 
-### `npm test`
+Aller dans le fichier .env et changer les valeurs pour se connecter à Azure.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Identifiants de connexion
 
-### `npm run build`
+| Utilisateur                             | Username       | Password   |
+| :-------------------------------------- | :------------- | :--------- |
+| Utilisateur sans crédit                 | `userNoCredit` | `password` |
+| Utilisateur avec crédit et une vm       | `userOneVM`    | `password` |
+| Utilisateur avec crédit et plusieurs vm | `userManyVM`   | `password` |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+L'utilisateur `userNoCredit` n'a pas de crédit et ne peut donc pas créer de VM.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+L'utilisateur `userOneVM` peut créer une VM. Donc lorsque la VM est créee, il doit attendre 10min avant de pouvoir en créer une autre. Lorsqu'il sera sur la page des informations de la VM, au bout de 10min la page s'actualisera automatiquement pour afficher la page de création de VM.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+L'utilisateur `userManyVM` peut créer plusieurs VM. Lorsqu'il sera sur la page d'informations de la VM, il aura un bouton pour créer une nouvelle VM. Chaque VM sera supprimé au bout de 10min. **IL EST LIMITÉ À 3 VM.**
