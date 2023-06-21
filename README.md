@@ -13,7 +13,14 @@ Ouvrir [http://localhost:3000](http://localhost:3000) pour voir l'application da
 
 # Env
 
-Aller dans le fichier .env et changer les valeurs pour se connecter à Azure.
+Créer un fichier .env et mettres les variables suivantes :
+
+```
+AZURE_TENANT_ID=your_tenant_id
+AZURE_CLIENT_ID=your_client_id
+AZURE_CLIENT_SECRET=your_client_secret
+AZURE_SUBSCRIPTION_ID=your_subscription_id
+```
 
 # Identifiants de connexion
 
