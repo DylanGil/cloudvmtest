@@ -80,14 +80,12 @@ const VM = () => {
   const onFinish = () => {
     setVmLoading(true);
     try {
-      axios
-        .post(`http://localhost:${process.env["BACKEND_PORT"]}/create-vm`, vm)
-        .then((res) => {
-          message.success("VM created!");
-          setVmLoading(false);
-          setVmCreated(res.data);
-          sessionStorage.setItem("vm", JSON.stringify(res.data));
-        });
+      axios.post(`http://localhost:3001/create-vm`, vm).then((res) => {
+        message.success("VM created!");
+        setVmLoading(false);
+        setVmCreated(res.data);
+        sessionStorage.setItem("vm", JSON.stringify(res.data));
+      });
     } catch (error) {
       console.log("error :>> ", error);
       message.error("Error creating VM, please try again");

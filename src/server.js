@@ -35,7 +35,7 @@ app.post("/create-vm", async (req, res) => {
   }
 });
 
-const port = process.env["BACKEND_PORT"];
+const port = 3001;
 app.listen(port, () => {
   console.log(`Serveur started on port ${port}`);
 });
