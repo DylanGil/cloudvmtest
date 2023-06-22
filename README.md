@@ -2,14 +2,12 @@
 
 # Requis
 
-Node.js
+Node.js minimum v12
+NPM
 
 # Installation
 
 Au démarage de l'application, écrire `npm install` dans la console pour installer les dépendances.
-
-Pour démarrer l'application, écrire `npm start` dans la console.
-Ouvrir [http://localhost:3000](http://localhost:3000) pour voir l'application dans le navigateur.
 
 # Env
 
@@ -20,7 +18,14 @@ AZURE_TENANT_ID=your_tenant_id
 AZURE_CLIENT_ID=your_client_id
 AZURE_CLIENT_SECRET=your_client_secret
 AZURE_SUBSCRIPTION_ID=your_subscription_id
+PORT=3000
+BACKEND_PORT=3001
 ```
+
+# Démarrage
+
+Pour démarrer l'application, écrire `npm start` dans la console.
+Ouvrir [http://localhost:3000](http://localhost:3000) pour voir l'application dans le navigateur.
 
 # Identifiants de connexion
 
